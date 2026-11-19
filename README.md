@@ -46,10 +46,6 @@ Run `sh scripts/test.sh` for the Swift Testing suite. The default suite uses fix
 - **Experimental.** AI capture includes a connection check and an explicit apply step. Provider tests use mock responses for this snapshot. The Notion adapter is covered by fixture tests and has no account connection flow in the app yet.
 - **Next.** Add a reviewed Notion connection and verify real sync. Expand keyboard navigation and multi-display testing for the edge panel.
 
-## AI-Assisted Development
-
-I defined the product requirements and the Projects → Resume → History flow. I specified interaction details for inactive windows, narrow layouts, and checkpoint recovery, along with acceptance checks for those behaviors. I used Codex to help implement the app, debug macOS interaction issues, and develop automated tests.
-
 ## License
 
 [MIT](LICENSE)
