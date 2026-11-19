@@ -1,0 +1,240 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SidePad intent plan v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "enum": [
+        1
+      ]
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "needs_clarification": {
+      "type": "boolean"
+    },
+    "clarification": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 1000
+    },
+    "operations": {
+      "type": "array",
+      "maxItems": 40,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "operation",
+          "ref",
+          "target",
+          "parent_ref",
+          "thread_ref",
+          "title",
+          "due_date",
+          "priority",
+          "context",
+          "progress",
+          "status"
+        ],
+        "properties": {
+          "operation": {
+            "type": "string",
+            "enum": [
+              "create_thread",
+              "create_task",
+              "create_subtask",
+              "update_thread_context",
+              "append_progress_event",
+              "change_thread_status"
+            ]
+          },
+          "ref": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 100
+          },
+          "target": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 100
+          },
+          "parent_ref": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 100
+          },
+          "thread_ref": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 100
+          },
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 300
+          },
+          "due_date": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "date": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 10
+              },
+              "relative": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "enum": [
+                  "today",
+                  "tomorrow",
+                  "day_after_tomorrow",
+                  null
+                ]
+              },
+              "time_zone": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 80
+              }
+            },
+            "required": [
+              "date",
+              "relative",
+              "time_zone"
+            ]
+          },
+          "priority": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 3
+          },
+          "context": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "summary": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 10000
+              },
+              "current_state": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 10000
+              },
+              "next_action": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 10000
+              },
+              "blockers": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 10000
+              },
+              "resume_point": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 10000
+              },
+              "notes": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 10000
+              },
+              "linked_resources": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 10000
+              }
+            },
+            "required": [
+              "summary",
+              "current_state",
+              "next_action",
+              "blockers",
+              "resume_point",
+              "notes",
+              "linked_resources"
+            ]
+          },
+          "progress": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 10000
+          },
+          "status": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "active",
+              "paused",
+              "completed",
+              "archived",
+              null
+            ]
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "confidence",
+    "needs_clarification",
+    "clarification",
+    "operations"
+  ]
+}

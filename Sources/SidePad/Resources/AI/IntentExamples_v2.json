@@ -1,0 +1,259 @@
+[
+  {
+    "input": "明天在 SidePad 项目里测试 DeepSeek API 连接。",
+    "context": {
+      "selected_thread_id": "11111111-1111-4111-8111-111111111111",
+      "threads": [
+        {
+          "id": "11111111-1111-4111-8111-111111111111",
+          "title": "SidePad"
+        }
+      ]
+    },
+    "plan": {
+      "schema_version": 2,
+      "confidence": 0.97,
+      "needs_clarification": false,
+      "clarification": null,
+      "operations": [
+        {
+          "operation": "create_task",
+          "ref": "temp:test",
+          "target": null,
+          "parent_ref": null,
+          "thread_ref": "11111111-1111-4111-8111-111111111111",
+          "title": "测试 DeepSeek API 连接",
+          "due_date": {
+            "date": null,
+            "relative": "tomorrow",
+            "time_zone": "Australia/Sydney"
+          },
+          "priority": null,
+          "context": null,
+          "progress": null,
+          "status": null,
+          "task_status": null
+        }
+      ]
+    }
+  },
+  {
+    "input": "今天完成了 DeepSeek API 接入，但是 Codex CLI 的能力检查报错，接下来需要修复这个问题并重新测试解析。",
+    "context": {
+      "tasks": [
+        {
+          "id": "22222222-2222-4222-8222-222222222222",
+          "title": "DeepSeek API 接入",
+          "thread_id": "11111111-1111-4111-8111-111111111111",
+          "is_completed": false
+        }
+      ]
+    },
+    "plan": {
+      "schema_version": 2,
+      "confidence": 0.97,
+      "needs_clarification": false,
+      "clarification": null,
+      "operations": [
+        {
+          "operation": "change_task_status",
+          "ref": null,
+          "target": "22222222-2222-4222-8222-222222222222",
+          "parent_ref": null,
+          "thread_ref": null,
+          "title": null,
+          "due_date": null,
+          "priority": null,
+          "context": null,
+          "progress": null,
+          "status": null,
+          "task_status": "completed"
+        },
+        {
+          "operation": "create_task",
+          "ref": "temp:repair",
+          "target": null,
+          "parent_ref": null,
+          "thread_ref": "11111111-1111-4111-8111-111111111111",
+          "title": "修复 Codex CLI 能力检查并重新测试解析",
+          "due_date": null,
+          "priority": null,
+          "context": null,
+          "progress": null,
+          "status": null,
+          "task_status": null
+        },
+        {
+          "operation": "append_progress_event",
+          "ref": null,
+          "target": "11111111-1111-4111-8111-111111111111",
+          "parent_ref": null,
+          "thread_ref": null,
+          "title": null,
+          "due_date": null,
+          "priority": null,
+          "context": null,
+          "progress": "Codex CLI 能力检查报错，解析验证受阻。",
+          "status": null,
+          "task_status": null
+        }
+      ]
+    }
+  },
+  {
+    "input": "我已经完成了设置页面的 UI 调整，接下来需要测试窗口缩放。",
+    "context": {
+      "selected_thread_id": "11111111-1111-4111-8111-111111111111",
+      "tasks": []
+    },
+    "plan": {
+      "schema_version": 2,
+      "confidence": 0.97,
+      "needs_clarification": false,
+      "clarification": null,
+      "operations": [
+        {
+          "operation": "create_task",
+          "ref": "temp:history",
+          "target": null,
+          "parent_ref": null,
+          "thread_ref": "11111111-1111-4111-8111-111111111111",
+          "title": "调整设置页面 UI",
+          "due_date": null,
+          "priority": null,
+          "context": null,
+          "progress": null,
+          "status": null,
+          "task_status": null
+        },
+        {
+          "operation": "change_task_status",
+          "ref": null,
+          "target": "temp:history",
+          "parent_ref": null,
+          "thread_ref": null,
+          "title": null,
+          "due_date": null,
+          "priority": null,
+          "context": null,
+          "progress": null,
+          "status": null,
+          "task_status": "completed"
+        },
+        {
+          "operation": "create_task",
+          "ref": "temp:resize",
+          "target": null,
+          "parent_ref": null,
+          "thread_ref": "11111111-1111-4111-8111-111111111111",
+          "title": "测试窗口缩放",
+          "due_date": null,
+          "priority": null,
+          "context": null,
+          "progress": null,
+          "status": null,
+          "task_status": null
+        }
+      ]
+    }
+  },
+  {
+    "input": "DeepSeek API 接入已经完成，接下来测试错误提示。",
+    "context": {
+      "selected_thread_id": "11111111-1111-4111-8111-111111111111",
+      "tasks": [
+        {
+          "id": "22222222-2222-4222-8222-222222222222",
+          "title": "DeepSeek API 接入",
+          "thread_id": "11111111-1111-4111-8111-111111111111",
+          "is_completed": true
+        }
+      ]
+    },
+    "plan": {
+      "schema_version": 2,
+      "confidence": 0.97,
+      "needs_clarification": false,
+      "clarification": null,
+      "operations": [
+        {
+          "operation": "create_task",
+          "ref": "temp:errors",
+          "target": null,
+          "parent_ref": null,
+          "thread_ref": "11111111-1111-4111-8111-111111111111",
+          "title": "测试错误提示",
+          "due_date": null,
+          "priority": null,
+          "context": null,
+          "progress": null,
+          "status": null,
+          "task_status": null
+        }
+      ]
+    }
+  },
+  {
+    "input": "重新打开 DeepSeek API 接入任务。",
+    "context": {
+      "selected_thread_id": "11111111-1111-4111-8111-111111111111",
+      "tasks": [
+        {
+          "id": "22222222-2222-4222-8222-222222222222",
+          "title": "DeepSeek API 接入",
+          "thread_id": "11111111-1111-4111-8111-111111111111",
+          "is_completed": true
+        }
+      ]
+    },
+    "plan": {
+      "schema_version": 2,
+      "confidence": 0.97,
+      "needs_clarification": false,
+      "clarification": null,
+      "operations": [
+        {
+          "operation": "change_task_status",
+          "ref": null,
+          "target": "22222222-2222-4222-8222-222222222222",
+          "parent_ref": null,
+          "thread_ref": null,
+          "title": null,
+          "due_date": null,
+          "priority": null,
+          "context": null,
+          "progress": null,
+          "status": null,
+          "task_status": "open"
+        }
+      ]
+    }
+  },
+  {
+    "input": "完成测试连接。",
+    "context": {
+      "selected_thread_id": null,
+      "tasks": [
+        {
+          "id": "22222222-2222-4222-8222-222222222222",
+          "title": "测试连接",
+          "thread_id": "11111111-1111-4111-8111-111111111111",
+          "is_completed": false
+        },
+        {
+          "id": "33333333-3333-4333-8333-333333333333",
+          "title": "测试连接",
+          "thread_id": "44444444-4444-4444-8444-444444444444",
+          "is_completed": false
+        }
+      ]
+    },
+    "plan": {
+      "schema_version": 2,
+      "confidence": 0.3,
+      "needs_clarification": true,
+      "clarification": "要完成哪个 Thread 下的“测试连接”任务？",
+      "operations": []
+    }
+  }
+]

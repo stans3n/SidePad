@@ -1,0 +1,65 @@
+# macOS and Xcode
+.DS_Store
+._*
+.AppleDouble/
+.Spotlight-V100/
+.Trashes/
+.build/
+.swiftpm/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+*.xcresult/
+*.app/
+*.dSYM/
+*.dmg
+*.pkg
+
+# Local configuration and credentials
+.env
+.env.*
+*.env
+.envrc
+*.local.json
+*.local.plist
+*.local.xcconfig
+.netrc
+.git-credentials
+.aws/
+.ssh/
+credentials.json
+secrets/
+secrets.json
+*.pem
+*.p12
+*.pfx
+*.keychain*
+*.mobileprovision
+
+# SidePad runtime data and local QA
+*.log
+*.db
+*.db-*
+*.sqlite*
+local.SidePad*.plist
+/Threads/
+/Attachments/
+/Favicons/
+Threads Demo Data/
+Threads V2 Demo Data/
+.notion-sync/
+.schema-backups/
+.history-recovery/
+.thread-transaction-*/
+.intent-batch-recovery.json
+.intent-staging-*
+.worktrees/
+.codex/
+/.portfolio-release/
+/dev plan/
+/DEVELOPMENT_REPORT.md
+/docs/screenshots/
+/docs/verification/
+/docs/threads-prototype-guide-*/
+/docs/threads/v2-evidence/
+/docs/threads-v2/
